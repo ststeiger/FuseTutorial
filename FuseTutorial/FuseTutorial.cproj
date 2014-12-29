@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8DD69C10-1885-46C9-8986-3C398537DE3B}</ProjectGuid>
+    <Compiler>
+      <Compiler ctype="GccCompiler" />
+    </Compiler>
+    <Language>C</Language>
+    <Target>Bin</Target>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <OutputName>FuseTutorial</OutputName>
+    <CompileTarget>Bin</CompileTarget>
+    <DefineSymbols>DEBUG MONODEVELOP _FILE_OFFSET_BITS=64</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+    <Includes>
+      <Includes>
+        <Include>/usr/include/fuse</Include>
+      </Includes>
+    </Includes>
+    <Libs>
+      <Libs>
+        <Lib>fuse</Lib>
+      </Libs>
+    </Libs>
+    <Commandlineparameters>/root/Downloads/fuse-tutorial-2014-06-12/html/ /mnt/bbfs/</Commandlineparameters>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <OutputName>FuseTutorial</OutputName>
+    <CompileTarget>Bin</CompileTarget>
+    <OptimizationLevel>3</OptimizationLevel>
+    <DefineSymbols>MONODEVELOP</DefineSymbols>
+    <SourceDirectory>.</SourceDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="bbfs.c" />
+    <Compile Include="log.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="headers\" />
+    <Folder Include="doc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="headers\log.h" />
+    <None Include="headers\params.h" />
+    <None Include="doc\callbacks.html" />
+    <None Include="doc\files.html" />
+    <None Include="doc\index.html" />
+    <None Include="doc\init.html" />
+    <None Include="doc\private.html" />
+    <None Include="doc\running.html" />
+    <None Include="doc\security.html" />
+    <None Include="doc\thanks.html" />
+    <None Include="doc\unclear.html" />
+  </ItemGroup>
+</Project>
